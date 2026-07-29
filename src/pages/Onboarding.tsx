@@ -108,6 +108,9 @@ function Onboarding() {
               <p className="text-[var(--color-muted)] mb-6">
                 Help us create the perfect plan for you.
               </p>
+              {error && (
+                <p className="text-sm text-red-400 mb-4">{error}</p>
+              )}
               <form className="space-y-5" onSubmit={handleQuestionaire}>
                 <Select 
                   id="goal"
@@ -169,7 +172,7 @@ function Onboarding() {
               </form>
             </Card> ) : (
               <Card variant="bordered" className="text-center py-16">
-                <Loader2 className="w-12 h-12 text-var[var(--color-accent)] mx-auto mb-6 animate-spin" />
+                <Loader2 className="w-12 h-12 text-[var(--color-accent)] mx-auto mb-6 animate-spin" />
                 <h1 className="text-2xl font-bold mb-2">Creating your Plan</h1>
                 <p className="text-[var(--color-muted)]">Our AI is building your personalized training program</p>
               </Card>
