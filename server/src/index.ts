@@ -10,7 +10,7 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3010
 
-app.use(cors())
+app.use(cors({ origin: "https://gym-ai-app-three.vercel.app" }))
 app.use(cookieParser())
 app.use(express.json())
 
@@ -18,6 +18,10 @@ app.use(express.json())
 app.use("/api/profile", profileRouter)
 app.use("/api/plan", planRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server running on port: ${PORT}`)
-})
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port: ${PORT}`)
+  })
+}
+
+export default app
