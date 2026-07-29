@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
+import { fileURLToPath } from 'url'
 import { profileRouter } from './routes/profile'
 import { planRouter } from './routes/plan'
 
@@ -18,7 +19,7 @@ app.use(express.json())
 app.use("/api/profile", profileRouter)
 app.use("/api/plan", planRouter)
 
-if (require.main === module) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
   })
