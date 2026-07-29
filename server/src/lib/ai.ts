@@ -1,6 +1,6 @@
 import OpenAI from 'openai'
 import dotenv from 'dotenv'
-import { UserProfile, TrainingPlan } from '../../types'
+import { UserProfile, TrainingPlan } from '../../types/index.js'
 
 
 dotenv.config()

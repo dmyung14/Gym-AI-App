@@ -3,8 +3,8 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
 import { fileURLToPath } from 'url'
-import { profileRouter } from './routes/profile'
-import { planRouter } from './routes/plan'
+import { profileRouter } from './routes/profile.js'
+import { planRouter } from './routes/plan.js'
 
 dotenv.config()
 
